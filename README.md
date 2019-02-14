@@ -9,7 +9,7 @@
 *Video must be a MP4*
 
 
-##Need a Gemini account for dynamic BTC address creation.
+## Need a Gemini account for dynamic BTC address creation.
 
   Create API Keys. Select Fund Management as API key type. This allows
   address creation but not sending or selling of funds.
