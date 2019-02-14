@@ -2,9 +2,6 @@
 ## A barebones PHP program that plays a movie after receiving a BTC payment.
 *Note: BTC payments sent from exchanges can take 10 minutes to verify, most wallets take 5 seconds.*
 
-## A barebones PHP program that plays a movie after receiving a BTC payment.
-*Note: BTC payments sent from exchanges can take 10 minutes to verify, most wallets take 5 seconds.*
-
 **Trailer stored in: public/trailers/trailer.MP4**
 
 **Movie stored in: public/movies/movie.MP4**
