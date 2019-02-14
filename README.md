@@ -2,7 +2,6 @@
 ## A barebones PHP program that plays a movie after receiving a BTC payment.
 *Note: BTC payments sent from exchanges can take 10 minutes to verify, most wallets take 5 seconds.*
 
-<<<<<<< HEAD
 ##A barebones PHP program that plays a movie after receiving a BTC payment.
 *Note: BTC payments sent from exchanges can take 10 minutes to verify, most wallets take 5 seconds.*
 
@@ -62,7 +61,7 @@
     RewriteRule ^checkPayment$ index.php [NC]
 
 
-#Good to Go!
+# Good to Go!
 
 
 ###### Add SSL: https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04
