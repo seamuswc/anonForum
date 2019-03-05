@@ -2,11 +2,12 @@
 ## A barebones PHP program that plays a movie after receiving a BTC payment.
 *Note: BTC payments sent from exchanges can take 10 minutes to verify, most wallets take 5 seconds.*
 
-**Trailer stored in: public/trailers/trailer.MP4**
+After download you'll be directed to a register page and asked for:
+Username, Password, and your Gemini Keys
 
-**Movie stored in: public/movies/movie.MP4**
+Simple login and backend for MP4 uploads.
 
-*Video must be a MP4*
+Simple BTC payment system that redirects the user to the movie after a BTC payment.
 
 
 ## Need a Gemini account for dynamic BTC address creation.
