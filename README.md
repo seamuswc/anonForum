@@ -24,11 +24,11 @@
 
 ###### Step 2 (Mandatory) - https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
 
-**also run *apt-get install composer* in step 2**
+also run *apt-get install composer* in step 2
 
 ###### Step 3 (Mandatory) - https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04
 
-**Ok now time to pull in the site. First need to clean out the web directory.**
+**Ok, now time to pull in the site. First we need to clean out the web directory. Only need to do this if there are files in the HTML folder**
 
     cd /var/www/html
 
@@ -39,7 +39,7 @@
 
 **Pull in the git**
 
-    git clone https://github.com/itadakiru/BTCstreaming.git .
+    git clone https://github.com/seamuswc/BTCstreaming.git .
 
 **load the dependencies and map out the files**
 
@@ -47,15 +47,6 @@
 
     composer dump-autoload
 
-**This allows the php router to work**
-
-    nano .htaccess
-
-    RewriteEngine on
-
-    RewriteRule ^paid$ index.php [NC]
-
-    RewriteRule ^checkPayment$ index.php [NC]
 
 
 # Good to Go!

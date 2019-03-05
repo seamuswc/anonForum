@@ -1,7 +1,11 @@
 <?php
 
+namespace stream\MVC\models;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use stream\core\DB;
+
 
 
   class Gemini
@@ -18,14 +22,22 @@ use GuzzleHttp\Exception\GuzzleException;
        * @param $secretKey
        * @param bool $sandbox
        */
-      public function __construct($apiKey, $secretKey)
-      {
-          $this->apiKey = $apiKey;
-          $this->secretKey = $secretKey;
 
-          $this->http = new Client([
-              'base_uri' => $this->liveUrl
-          ]);
+
+      public function __construct()
+      {
+        //check the DB and get the keys
+        $db = new DB;
+        $db = $db->getConnection();
+        $keys = $db->getkeys();
+        $db = NULL;
+
+        $this->apiKey = $keys[0];
+        $this->secretKey = $keys[1];
+
+        $this->http = new Client([
+          'base_uri' => $this->liveUrl
+        ]);
       }
 
       /**
@@ -81,10 +93,8 @@ use GuzzleHttp\Exception\GuzzleException;
        */
       private function post($endpoint, $params)
       {
-
-
           $response = $this->http->post($endpoint, [
-                  'headers' => $this->prepareHeaders($params)
+                'headers' => $this->prepareHeaders($params)
               ]
           );
 
@@ -112,6 +122,7 @@ use GuzzleHttp\Exception\GuzzleException;
        * @param $params
        * @return array
        */
+
       protected function prepareHeaders($params)
       {
           $payload = base64_encode(json_encode($params, JSON_FORCE_OBJECT));

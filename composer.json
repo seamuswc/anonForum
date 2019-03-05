@@ -3,11 +3,14 @@
   "autoload": {
     "classmap": [
       "./"
-    ]
+    ],
+    "files": ["core/Helpers.php"]
   },
+
 
   "require": {
     "guzzlehttp/guzzle": "6.3.3",
     "semantic/ui": "2.4.1"
   }
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+namespace stream\MVC\models;
 
 class BlockCypher {
 
@@ -10,7 +11,6 @@ class BlockCypher {
   }
 
   public function checkPayment() {
-
 
     sleep(3);
 

@@ -1,9 +1,9 @@
 <?php
 
-
-
 function view($name, $data = [], $error = []) {
     extract($data);
+    extract($error);
+
     return require "MVC/views/{$name}.php";
   }
 

@@ -1,5 +1,8 @@
 <?php
 
+namespace stream\MVC\controllers;
+
+use stream\MVC\models\BlockCypher;
 
   class paymentController {
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace stream\core;
+
 class Router
 {
     protected $routes = [
@@ -38,6 +40,8 @@ class Router
     }
 
     protected function callControllerFunction($controller, $action) {
+
+      $controller = "stream\\MVC\\controllers\\{$controller}";
 
       $controller = new $controller;
 
