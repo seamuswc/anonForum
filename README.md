@@ -14,9 +14,6 @@
   Create API Keys. Select Fund Management as API key type. This allows
   address creation but not sending or selling of funds.
 
-  Add the keys at top in the pub_key and priv_key variables.
- **MVC/controllers/pagesController**
-
 
 ## Server Setup: Recommend DigitalOcean & Ubuntu
 
