@@ -46,7 +46,7 @@ also run *apt-get install composer* in step 2
     composer dump-autoload
 
 
-# Potentials Database related crashes 
+# Potential Database related crashes 
 
 'config.php' contains the database connection information. Edit it to adjsut 'username', 'password', etc...
 
