@@ -7,8 +7,10 @@ require 'vendor/autoload.php';
 use stream\core\Router;
 use stream\core\DB;
 
+
   $db = new DB;
   $db = $db->getConnection();
+  $db->setup();
 
   if ( $db->userExists() ) {
     $db=NULL;

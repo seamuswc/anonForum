@@ -51,8 +51,13 @@ class Upload {
         return false;
     }
 
-  
+    $price = $_POST['price'];
+    if (!is_numeric($price)) {
+      return false;  
+    }   
+
   }
+
 }
 
 

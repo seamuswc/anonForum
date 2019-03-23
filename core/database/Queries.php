@@ -29,7 +29,8 @@ class Queries
         return $keys;
     }
 
-    public function setup(){
+    public function setup() {
+       
         try {
 
             $statement = $this->pdo->prepare("CREATE DATABASE IF NOT EXISTS stream");

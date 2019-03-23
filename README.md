@@ -51,3 +51,7 @@ also run *apt-get install composer* in step 2
 
 
 ###### Add SSL: https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04
+
+## License
+
+This project is licensed under the MIT License

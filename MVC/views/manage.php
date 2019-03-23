@@ -87,7 +87,20 @@ crossorigin="anonymous"></script>
                   prompt : 'Please select a Movie'
                 }            
               ]
-            }
+            }/*,
+            price: {
+              identifier  : 'price',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter a price'
+                },     
+                {
+                  type   : 'number',
+                  prompt : 'Price must only be numbers'
+                }       
+              ]
+            }*/
           },
               onSuccess: function(event, fields) {
               dim();
