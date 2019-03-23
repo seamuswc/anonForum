@@ -48,9 +48,9 @@ also run *apt-get install composer* in step 2
 
 # Potentials Database related crashes 
 
-###### 'config.php' contains the database connection information. Edit it to adjsut 'username', 'password', etc...
+'config.php' contains the database connection information. Edit it to adjsut 'username', 'password', etc...
 
-###### The program automatically creates a database called 'stream'. If there is already a Database with this name the program might not work.
+The program automatically creates a database called 'stream'. If there is already a Database with this name the program might not work.
 
 # Good to Go!
 
