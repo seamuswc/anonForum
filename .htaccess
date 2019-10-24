@@ -1,8 +1,8 @@
 RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
-RewriteRule ^paid$ index.php [NC]
-
-RewriteRule ^checkPayment$ index.php [NC]
 
 file_uploads = On
 php_value upload_max_filesize 5000M

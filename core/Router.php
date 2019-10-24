@@ -1,6 +1,6 @@
 <?php
 
-namespace stream\core;
+namespace ooshi\core;
 
 class Router
 {
@@ -34,19 +34,24 @@ class Router
             ...explode('@', $this->routes[$requestType][$uri])
           );
         } else {
-          return $this->callControllerFunction('pagesController','index');
+
+            //die($uri . $requestType);
+            return $this->callControllerFunction('channelController','show');
+          
+
         }
 
     }
 
     protected function callControllerFunction($controller, $action) {
 
-      $controller = "stream\\MVC\\controllers\\{$controller}";
+      $controller = "ooshi\\MVC\\controllers\\{$controller}";
 
       $controller = new $controller;
 
       if (! method_exists($controller, $action)) {
-        return (new pagesController)->index();
+        //die($controller . $action);
+        return (new channelController)->index();
       }
 
       return $controller->$action();

@@ -1,9 +1,9 @@
 <?php
 
-namespace stream\core;
+namespace ooshi\core;
 
-use stream\core\database\Queries;
-use stream\core\database\Connection;
+use ooshi\core\database\Queries;
+use ooshi\core\database\Connection;
 
 class DB
 {

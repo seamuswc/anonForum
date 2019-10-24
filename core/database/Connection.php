@@ -1,6 +1,6 @@
 <?php
 
-namespace stream\core\database;
+namespace ooshi\core\database;
 
 use PDO;
 use PDOException;
