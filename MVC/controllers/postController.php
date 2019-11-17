@@ -23,70 +23,36 @@ class postController {
       return view('channels', compact('channels') );
   }
   
-  public function get_type($ext) {
-
-    switch ($ext) {
-      case 'jpg':
-        $type = 'image';
-        break;
-      case 'jpeg':
-        $type = 'image';
-        break;
-      case 'png':
-        $type = 'image';
-        break; 
-      default:
-        $type = false;
-        break;
-    }
-    return $type;
-
-  }
-
   public function ip_check() {
-
         $ip = $_SERVER['REMOTE_ADDR'];
         $latest_use = $this->db->selectWhere('ips', 'ip', $ip, true);
-
         #if ip never used before
         if ( !$latest_use ) {
             return false;
         } 
-
         $dateTime = new Carbon($latest_use[0]['created']);
         $diff = $dateTime->diffInMinutes(Carbon::now());
-
         if ($diff > 60) {
           return false;
         }
-
         return true;   
-
   } 
 
   public function check_ten($uri) {
-        //selectCount($table, $column, $value) {
-        $count = $this->db->selectCount('posts', 'channel', $uri);
-        
-        if ($count >= 5) {
-
+        $count = $this->db->selectCount('posts', 'channel', $uri); 
+        if ($count >= 10) {
             $tenth = $this->db->selectFirst('posts', 'channel', $uri, true);
-            
-            //delete storage file
-            $name = $tenth['file'];
-            if(file_exists("public/".$name)) {
-              chmod("public/".$name, 0755); //Change the file permissions if allowed
-              unlink("public/".$name); //remove the file
-            }
-
-            //delete the DB
             $deleted = $this->db->delete('posts', $tenth['id']);
         }  
   } 
 
   public function create() {
+      
       $uri = $_POST['uri'];
+      $url_array = explode("/", $uri);
+      $uri = end($url_array);
 
+      
       if ($this->ip_check()) {
         $controller = new channelController;
         return $controller->go($uri);   
@@ -94,41 +60,16 @@ class postController {
 
       $this->check_ten($uri);
 
-      //validation
-      $ext = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
-      $pass_ext = (($ext == 'jpg') || ($ext == 'jpeg') || ($ext == 'png'));
-      
-      $size = $_FILES['file']['size'];
-      $pass_size = ($size < 5000000);
-
-
-      $name = pathinfo($_FILES["file"]["name"], PATHINFO_BASENAME);
-      $name = $name.date("Y-m-d H:i:s").rand(0,1000);
-      $name = str_replace(array(".", " "), "", $name);
-      $name = trim($name.".".$ext);
-
-
-      $upload = false;
-      if ($pass_size && $pass_ext) {
-        $upload = new Upload;
-        $upload = $upload->upload($name);
-      }
-
-     
-
-      if ($upload) {
-
-        $channel = $_POST['uri'];
-        $file = $name;
+        $channel = $uri;
+        $body = $_POST['body'];
         $ip = $_SERVER['REMOTE_ADDR'];
-        $type = $this->get_type($ext);
-
+        $type = 'text';
 
         $data = array(
             "channel" => $channel,
-            "file" => $name,
+            "body" => $body,
             "ip" => $ip,
-            "type" => $this->get_type($ext),
+            "type" => $type,
             "created" => date("Y-m-d H:i:s")
           );
 
@@ -140,8 +81,6 @@ class postController {
           );
         $this->db->insert('ips', $data);
 
-      } 
- 
         $controller = new channelController;
         return $controller->go($uri);      
   }

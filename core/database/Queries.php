@@ -42,10 +42,21 @@ class Queries
             $statement = $this->pdo->prepare($sql);
             $statement->execute();
 
+            // $sql = "CREATE TABLE IF NOT EXISTS posts (
+            // id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+            // channel VARCHAR(25) NOT NULL,
+            // file VARCHAR(100) NOT NULL,
+            // ip VARCHAR(50) NOT NULL,
+            // type VARCHAR(10) NOT NULL,
+            // created VARCHAR(50) NOT NULL
+            // )";
+            // $statement = $this->pdo->prepare($sql);
+            // $statement->execute();
+
             $sql = "CREATE TABLE IF NOT EXISTS posts (
             id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
             channel VARCHAR(25) NOT NULL,
-            file VARCHAR(100) NOT NULL,
+            body TEXT NOT NULL,
             ip VARCHAR(50) NOT NULL,
             type VARCHAR(10) NOT NULL,
             created VARCHAR(50) NOT NULL

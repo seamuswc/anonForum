@@ -26,17 +26,19 @@ class channelController {
   public function go($uri) {
       header("Location: /$uri");
       $posts = $this->db->selectWhere('posts', 'channel', $uri, true);
-      return view($uri, compact('posts'));
+      return view_sub($uri, compact('posts'));
   }
 
   public function show() {
     
     $channels = $this->db->selectAll('channels');
+    
+    $url_array = explode("/", uri());
+    $uri = end($url_array);
     foreach ($channels as $channel) {
-      if ($channel['channel'] == uri() ) {
+      if ($channel['channel'] == $uri ) {
         $posts = $this->db->selectWhere('posts', 'channel', $channel['channel'], true);
-        return view($channel['channel'], compact('posts'));
-        
+        return view_sub($channel['channel'], compact('posts')); 
       }
     }
 
@@ -57,15 +59,11 @@ class channelController {
 
         $this->db->insert('channels', $data);
             
-            
-        $src = "/var/www/html/MVC/views/origin.php";
-        $dest = "/var/www/html/MVC/views/$name.php";
-        copy($src, $dest);
-        
-        
-        
-        return $this->index();
-         
+         $src_dest = path_name();
+         $src = $src_dest[0];
+         $dest = $src_dest[1]."/$name.php";
+        copy($src, $dest);  
+        return $this->index();   
     }  
 
   }

@@ -86,31 +86,13 @@
     </head>
     <body>
 
-<p>1.	You will not upload, post, discuss, request, or link to anything that violates local or United States law.</p>
+    <p>1.	You will not upload, post, discuss, request, or link to anything that violates local or United States law.</p>
 
    <p> 2.	You will immediately cease and not continue to access the site if you are under the age of 18. </p>
    
     <p>3.    You will not post or request personal information ("dox").</p>
 
-    <p>4.    
-        If you believe that material or content residing on or accessible through Company's websites or services infringes a copyright, please email us with the post ID.
-<br>
-The post ID is the number that appears in the top right hand corner on every post before the date.
-<br>
-The post with the corresponding ID will be deleted as soon as the email is received and read, at the latest within 12 hours.</p>
-
-    <p>5.	
-        If you believe that material or content residing on or accessible through Company's websites or services is ilegal, please email us with the post ID.
-<br>
-The post ID is the number that appears in the top right hand corner on every post before the date.
-<br>
-The post with the corresponding ID will be deleted as soon as the email is received and read, at the latest within 12 hours.
-<br>
-If you are a government agency we will send the IP address responsible for the post.</p>
-
-
-
-<p>Email: .com</p>
+    <p>4.   Site gets a complete purging of all content if anything illegal is done. Don't be a dick.
 
     </body>
 </html>

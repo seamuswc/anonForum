@@ -115,7 +115,7 @@
                     <?php
                     foreach ($channels as $channel) {
                         $count ++;
-                        echo   "<a href=/".$channel['channel'].">". $channel['channel'] . "</a>\n";
+                        echo   "<a href=/subs/".$channel['channel'].">". $channel['channel'] . "</a>\n";
                     }
                     ?>
 

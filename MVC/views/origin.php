@@ -89,12 +89,12 @@
 <div class="ui grid center aligned">
 <form class="ui form" method="POST" action="/upload" enctype="multipart/form-data">
 
+    <input type="hidden" name="uri" value=<?php echo uri(); ?> >
      
      <div class="field">
-              <label>Only 1 post per Hour, MP4, Jpg, Png Files < 5mb</label>
+      <label>Text</label>
       <div class="ui action input">
-        <input type="file" name="file" placeholder="Jpeg, Png, MP4">
-        <input type="hidden" name="uri" value=<?php echo uri(); ?> >
+        <textarea rows="5" cols="50" name="body"></textarea>
         <button class="ui submit button inverted green" type="submit">Submit</button>
       </div>
     </div>
@@ -113,24 +113,15 @@
   <?php
   foreach($posts as $post) {
 
-  
-    if ($post['type'] == 'video') {
+    if ($post['type'] == 'text') {
       echo "
         <div class='centered'>" .$post['id'] . "  ". $post['created']."</div>
-          <p>image</p>
-          </div>
-        ";
-    }
-
-    if ($post['type'] == 'image') {
-      echo "
-        <div class='centered'>" .$post['id'] . "  ". $post['created']."</div>
-        <div class='image'>
-          <img width='100%' height='250px' src='public/".$post['file']."'>
+        <div class='ui raised segment'>
+          <p>". $post['body'] ."</p>
         </div>
         ";
     }
-
+  
   } //foreach end
     
  ?>

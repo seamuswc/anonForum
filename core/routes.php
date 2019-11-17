@@ -4,6 +4,8 @@
 
 
 $router->get('', 'channelController@index');
+
+
 $router->get('channels', 'channelController@create');
 $router->get('rules', 'channelController@rules');
 
