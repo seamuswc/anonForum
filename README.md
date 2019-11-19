@@ -21,3 +21,6 @@
     
 
     php -S localhost:8000 //local testing
+
+    No replies to posts
+    limits 1 post per hour per ip to prevent spamming.
