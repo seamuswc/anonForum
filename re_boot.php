@@ -3,7 +3,7 @@
 
 require 'vendor/autoload.php';
 
-use ooshi\core\DB;
+use anonForum\core\DB;
 
 
   $db = new DB;

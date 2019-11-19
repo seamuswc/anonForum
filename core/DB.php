@@ -1,9 +1,9 @@
 <?php
 
-namespace ooshi\core;
+namespace anonForum\core;
 
-use ooshi\core\database\Queries;
-use ooshi\core\database\Connection;
+use anonForum\core\database\Queries;
+use anonForum\core\database\Connection;
 
 class DB
 {

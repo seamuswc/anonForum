@@ -1,6 +1,6 @@
 <?php
 
-namespace ooshi\core;
+namespace anonForum\core;
 
 class Router
 {
@@ -45,7 +45,7 @@ class Router
 
     protected function callControllerFunction($controller, $action) {
 
-      $controller = "ooshi\\MVC\\controllers\\{$controller}";
+      $controller = "anonForum\\MVC\\controllers\\{$controller}";
 
       $controller = new $controller;
 

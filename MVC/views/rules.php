@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ooshi</title>
+        <title>anonForum</title>
         <!-- Styles -->
         
         <style>
@@ -92,7 +92,9 @@
    
     <p>3.    You will not post or request personal information ("dox").</p>
 
-    <p>4.   Site gets a complete purging of all content if anything illegal is done. Don't be a dick.
+    <p>4.   Site gets a complete purging of all content on a random bases.
+
+    <p>5.   To prevent spammers, 1 post per hour per ip address.
 
     </body>
 </html>

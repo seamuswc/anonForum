@@ -1,7 +1,7 @@
 <?php
 //need to sql inject protect
 
-namespace ooshi\core\database;
+namespace anonForum\core\database;
 
 use PDO;
 use PDOException;
@@ -10,9 +10,15 @@ class Queries
 {
  
     protected $pdo;
+    protected $db_name = "use anon";
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
+    }
+
+    protected function db_prepare() {
+        $statement = $this->pdo->prepare($this->db_name);
+        $statement->execute();
     }
 
     public function setup() {
@@ -22,8 +28,7 @@ class Queries
             $statement = $this->pdo->prepare("CREATE DATABASE IF NOT EXISTS anon");
             $statement->execute();
 
-            $statement = $this->pdo->prepare("use anon");
-            $statement->execute();
+            $this->db_prepare();
          
             $sql = "CREATE TABLE IF NOT EXISTS channels (
             id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -42,16 +47,7 @@ class Queries
             $statement = $this->pdo->prepare($sql);
             $statement->execute();
 
-            // $sql = "CREATE TABLE IF NOT EXISTS posts (
-            // id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-            // channel VARCHAR(25) NOT NULL,
-            // file VARCHAR(100) NOT NULL,
-            // ip VARCHAR(50) NOT NULL,
-            // type VARCHAR(10) NOT NULL,
-            // created VARCHAR(50) NOT NULL
-            // )";
-            // $statement = $this->pdo->prepare($sql);
-            // $statement->execute();
+            
 
             $sql = "CREATE TABLE IF NOT EXISTS posts (
             id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -75,8 +71,7 @@ class Queries
     
     public function insert($table, $parameters)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
         
         //'insert into %s (%s, %s) values (:%s, :s)',
         $sql = sprintf(
@@ -96,8 +91,8 @@ class Queries
 
     public function selectAll($table)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         $sql = "SELECT * FROM $table";
         
@@ -116,8 +111,8 @@ class Queries
 
     public function selectWhere($table, $column, $value, $order = NULL)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         if ($order == NULL) {
             $sql = "SELECT * FROM $table WHERE $column = '$value'";
@@ -138,8 +133,8 @@ class Queries
 
     public function selectCount($table, $column, $value) {
             
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
 
         
         $sql = "SELECT COUNT($column) FROM $table WHERE $column = '$value'";
@@ -156,8 +151,8 @@ class Queries
 
     public function selectFirst($table, $column, $value, $order = NULL)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         if ($order == NULL) {
             $sql = "SELECT * FROM $table WHERE $column = '$value' LIMIT 1";
@@ -179,8 +174,8 @@ class Queries
 
     public function delete($table, $id) {
 
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         $sql = "DELETE FROM $table WHERE id = '$id'";
 
@@ -198,8 +193,8 @@ class Queries
     //Commands
     public function CommandDelete($id) {
 
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         $sql = "DELETE FROM posts WHERE id = '$id'";
 
@@ -217,8 +212,8 @@ class Queries
 
     public function CommandSelect($id)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         
         $sql = "SELECT * FROM posts WHERE id = '$id'";
@@ -238,8 +233,8 @@ class Queries
 
     public function CommandSelectSub($sub)
     {
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         
         $sql = "SELECT * FROM posts WHERE channel = '$sub'";
@@ -257,8 +252,8 @@ class Queries
 
     public function CommandDeleteSub($sub) {
 
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         $sql = "DELETE FROM posts WHERE channel = '$sub'";
 
@@ -285,8 +280,8 @@ class Queries
 
     public function clean() {
 
-        $statement = $this->pdo->prepare("use anon");
-        $statement->execute();
+        $this->db_prepare();
+
         
         $sql = "DELETE FROM posts";
 

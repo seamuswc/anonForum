@@ -1,10 +1,9 @@
 <?php
 
-namespace ooshi\MVC\controllers;
+namespace anonForum\MVC\controllers;
 
-use ooshi\core\DB;
-use ooshi\MVC\controllers\channelController;
-use ooshi\MVC\models\Upload;
+use anonForum\core\DB;
+use anonForum\MVC\controllers\channelController;
 use Carbon\Carbon;
 
 
@@ -58,7 +57,7 @@ class postController {
         return $controller->go($uri);   
       }
 
-      $this->check_ten($uri);
+      //$this->check_ten($uri); put posts limits on subs
 
         $channel = $uri;
         $body = $_POST['body'];

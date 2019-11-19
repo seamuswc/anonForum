@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ooshi</title>
+        <title>anonForum</title>
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
@@ -85,19 +85,19 @@
 <?php $count = count($channels); ?>
 <div class="ui stackable two column grid">
         <?php if ($count < 25) {
-            echo "
-        <div class='column'>
-        <form class='ui form' method='GET' action='/channels' enctype='multipart/form-data'>
-            
-            <div class='field'>
-              <div class='ui action input'>
-                <input type='text' name='name' placeholder='Sub Name'>
-                <button class='ui submit button inverted green' type='submit'>Create</button>
-              </div>
-            </div>
+        echo "
+            <div class='column'>
+            <form class='ui form' method='GET' action='/channels' enctype='multipart/form-data'>
+                
+                <div class='field'>
+                <div class='ui action input'>
+                    <input type='text' name='name' placeholder='Sub Name'>
+                    <button class='ui submit button inverted green' type='submit'>Create</button>
+                </div>
+                </div>
 
-        </form>
-        </div>
+            </form>
+            </div>
         ";
     }
 

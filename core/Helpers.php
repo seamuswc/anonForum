@@ -22,14 +22,19 @@ function method() {
     return $_SERVER['REQUEST_METHOD'];
   }
 
+  
+
   function path_name() {
 
-    $live = true;
+    $live = false;
 
     if ($live) {
       return array(
-        "/var/www/html/MVC/views/origin.php",   
-        "/var/www/html/MVC/views/subs"
+        "/var/www/MVC/views/origin.php",   
+        "/var/www/MVC/views/subs"
+
+        
+        
       );
     } else {
       return array(
@@ -39,4 +44,3 @@ function method() {
     }
 
   }
-

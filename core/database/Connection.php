@@ -1,6 +1,6 @@
 <?php
 
-namespace ooshi\core\database;
+namespace anonForum\core\database;
 
 use PDO;
 use PDOException;

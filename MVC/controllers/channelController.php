@@ -1,8 +1,8 @@
 <?php
 
-namespace ooshi\MVC\controllers;
+namespace anonForum\MVC\controllers;
 
-use ooshi\core\DB;
+use anonForum\core\DB;
 
 
 class channelController {
@@ -62,6 +62,7 @@ class channelController {
          $src_dest = path_name();
          $src = $src_dest[0];
          $dest = $src_dest[1]."/$name.php";
+        
         copy($src, $dest);  
         return $this->index();   
     }  
