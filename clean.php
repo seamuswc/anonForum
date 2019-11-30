@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-require __DIR__ . '/vendor/autoload.php';
+require 'core/DB.php';
 
 use anonForum\core\DB;
 $db = new DB;
@@ -17,14 +17,5 @@ if ($sub =='y' || $sub =='Y' || $sub =='yes' || $sub =='YES' || $sub =='Yes') {
 	$db->clean();
 	array_map('unlink', glob($dir[1]."/*.*"));
 }
-
-
-
-
-
-
-
-
-
 
 ?>

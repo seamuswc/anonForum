@@ -1,6 +1,10 @@
 <?php
-
 namespace anonForum\core;
+
+require 'MVC/controllers/channelController.php';
+require 'MVC/controllers/postController.php';
+require 'MVC/controllers/subscribeController.php';
+
 
 class Router
 {

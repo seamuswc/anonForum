@@ -6,7 +6,7 @@
     
     The following command cleans the DB and files in views/subs
         ./clean or 'php clean.php'
-
+    
     To adjust DB connection username & password
         config.php 
 

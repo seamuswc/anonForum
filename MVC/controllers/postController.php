@@ -2,9 +2,9 @@
 
 namespace anonForum\MVC\controllers;
 
+use \Datetime;
 use anonForum\core\DB;
 use anonForum\MVC\controllers\channelController;
-use Carbon\Carbon;
 
 
 class postController {
@@ -29,9 +29,11 @@ class postController {
         if ( !$latest_use ) {
             return false;
         } 
-        $dateTime = new Carbon($latest_use[0]['created']);
-        $diff = $dateTime->diffInMinutes(Carbon::now());
-        if ($diff > 60) {
+        $oldDate = new DateTime($latest_use[0]['created']);
+        $newDate = new DateTime(date("Y-m-d H:i:s"));
+        $diff = $newDate->diff($oldDate);
+        $hours = $diff->h;
+        if ($hours >= 1) {
           return false;
         }
         return true;   

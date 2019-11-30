@@ -10,7 +10,7 @@ class Queries
 {
  
     protected $pdo;
-    protected $db_name = "use anon";
+    protected $db_name = "use u308335766_anon";
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
@@ -25,7 +25,7 @@ class Queries
        
         try {
 
-            $statement = $this->pdo->prepare("CREATE DATABASE IF NOT EXISTS anon");
+            $statement = $this->pdo->prepare("CREATE DATABASE IF NOT EXISTS u308335766_anon");
             $statement->execute();
 
             $this->db_prepare();

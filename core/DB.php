@@ -2,6 +2,10 @@
 
 namespace anonForum\core;
 
+require 'database/Queries.php';
+require 'database/Connection.php';
+
+
 use anonForum\core\database\Queries;
 use anonForum\core\database\Connection;
 

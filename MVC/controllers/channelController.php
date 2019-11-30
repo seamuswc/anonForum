@@ -2,6 +2,8 @@
 
 namespace anonForum\MVC\controllers;
 
+require 'core/DB.php';
+
 use anonForum\core\DB;
 
 

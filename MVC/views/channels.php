@@ -36,9 +36,6 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
-
-
-
             }
             .position-ref {
                 position: relative;
@@ -72,21 +69,36 @@
 
                 position: absolute;
                 bottom: 5px;
+                width: 100%;
             }
 
             .btc {
                 top: 10px;
-
             }
+
+            .sub-creator-1 {
+                margin-top: 5px !important;
+            }
+
+            .sub-creator-2 {
+                margin: auto !important;
+                text-align: center; 
+                font-weight:bold;
+            }
+
+            .subscribe {
+                
+            }
+
         </style>
         
     </head>
     <body>
 <?php $count = count($channels); ?>
-<div class="ui stackable two column grid">
+<div class="ui stackable two column grid sub-creator-1">
         <?php if ($count < 25) {
         echo "
-            <div class='column'>
+            <div class='column sub-creator-2'>
             <form class='ui form' method='GET' action='/channels' enctype='multipart/form-data'>
                 
                 <div class='field'>
@@ -102,10 +114,11 @@
     }
 
     ?>
-                
-    <div class="column right floated btc">BTC:  1MAQrEPydZhXSCu7Y6oqUR5q4RbDwKsxPr</div>
 
 </div>
+
+<!---->
+<!---->
 
         <div class="flex-center position-ref full-height">
             <div class="content">
@@ -124,18 +137,14 @@
                 </div>
             </div>
 
-            <div class="foot"><a href="/rules"> Rules / Legal </a></div>
+            <div class="foot">
+                <?php require('subscribe.php'); ?>
+            </div>
+
 
         </div>
 
     </body>
 </html>
-<!--
-<?php/*
-                    foreach ($channels as $channel) {
-                        $count ++;
-                        echo   "<a href=/".$channel['channel'].">". $channel['channel'] . "</a>";
-                    }*/
-                    ?>
--->
+
 

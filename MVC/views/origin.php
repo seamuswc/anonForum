@@ -21,8 +21,6 @@
         .ui.comments {
           max-width: none !important;
         }
-
-
       </style>
 
        <style>
@@ -34,9 +32,6 @@
                 height: 100vh;
                 margin: 0;
             }
-
-            
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -57,15 +52,11 @@
                 text-transform: uppercase;
                 text-align: center;
               }
-
-             
+  
              .space_top {
               margin-top: .15em !important;
-             }
-              
-             
+             }  
         </style>
-
     </head>
     <body>
       
@@ -99,7 +90,6 @@
       </div>
     </div>
 
-    
 
 </form>
 </div>

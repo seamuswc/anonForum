@@ -26,12 +26,12 @@ function method() {
 
   function path_name() {
 
-    $live = false;
+    $live = true;
 
     if ($live) {
       return array(
-        "/var/www/MVC/views/origin.php",   
-        "/var/www/MVC/views/subs"
+        "/home/*user*/domains/*domian*/public_html/MVC/views/origin.php",   
+        "/home/*user*/domains/*domian*/public_html/MVC/views/subs"
 
         
         

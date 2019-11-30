@@ -11,4 +11,5 @@ $router->get('rules', 'channelController@rules');
 
 
 $router->post('upload', 'postController@create');
+$router->post('subscribe', 'subscribeController@create');
 
